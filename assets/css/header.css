@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #3b5999;
+}
+
+header div {
+  display: flex;
+}
+
+header div p {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+}
+
+header div p a {
+  color: white;
+  text-decoration: none;
+}
+
+header div p a:hover {
+  text-decoration: underline;
+}
+
+header div .heading {
+  font-weight: bolder;
+}

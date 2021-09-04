@@ -1,7 +1,7 @@
 const User=require('../models/users');
 
 module.exports.profile=function(req,res){
-    return res.render('users',{
+    return res.render('user_profile',{
         title:"user's profile",
         str:"User's Profile is being displayed"
     });
@@ -50,5 +50,11 @@ module.exports.Create=function(req,res){
 }
 // sign in and create a session for the user
 module.exports.createSession=function(req,res){
-
+     return res.redirect('/');
+}
+// sign out and end the session for the user 
+module.exports.endSession=function(req,res)
+{
+    req.logout();
+    return res.redirect('/');
 }

@@ -1,0 +1,15 @@
+footer{
+background-color:#3b5999;
+display: flex;
+p{
+    margin: 10px;
+    color:whitesmoke;
+    a{
+        text-decoration: none;
+        color: whitesmoke;
+        &:hover{
+           text-decoration: underline;
+        }
+    }
+}
+}

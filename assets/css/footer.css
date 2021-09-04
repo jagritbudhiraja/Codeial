@@ -1,0 +1,18 @@
+footer {
+  background-color: #3b5999;
+  display: flex;
+}
+
+footer p {
+  margin: 10px;
+  color: whitesmoke;
+}
+
+footer p a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+footer p a:hover {
+  text-decoration: underline;
+}

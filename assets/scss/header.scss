@@ -1,0 +1,23 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color:#3b5999;
+    div{
+        display: flex;
+        p{
+            margin-left:10px;
+            margin-right: 10px;
+            color:white;
+            a{
+                color:white;
+                text-decoration: none;
+                &:hover{
+                    text-decoration: underline;
+                 }
+            }
+        }
+        .heading{
+            font-weight:bolder;
+        }
+    }
+}

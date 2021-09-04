@@ -1,0 +1,31 @@
+.authenticating {
+  display: flex;
+  flex-direction: column;
+}
+
+.authenticating h1 {
+  text-align: center;
+}
+
+.authenticating form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.authenticating form input {
+  width: 19vw;
+  height: 25px;
+  margin-top: 15px;
+}
+
+.authenticating form button {
+  width: 6vw;
+  margin: auto;
+  margin-top: 15px;
+  background-color: #3b5999;
+  color: white;
+  padding: 5px 1px;
+  font-size: 1rem;
+  border: none;
+}

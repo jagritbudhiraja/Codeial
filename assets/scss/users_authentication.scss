@@ -1,0 +1,27 @@
+.authenticating{
+    display: flex;
+    flex-direction: column;
+    h1{
+        text-align: center;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        input{
+            width:19vw;
+            height: 25px;
+            margin-top: 15px;
+        }
+        button{
+            width:6vw;
+            margin: auto;
+            margin-top: 15px;
+            background-color:#3b5999;
+            color:white;
+            padding:5px 1px;
+            font-size:1rem;
+            border: none;
+        }
+    }
+}
