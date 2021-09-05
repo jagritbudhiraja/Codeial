@@ -1,9 +1,20 @@
+const { localsName } = require('ejs');
+const Post=require('../models/post');
+const { post } = require('../routes');
+
 module.exports.home=function(req,res){
-    return res.render('home',{
-        title:"Home"
+    //(populate means to bring the whole user object not just the id)
+    Post.find({}).populate('user').exec(function(err,posts){
+        if(err)
+        {
+            console.log('Error in fetching posts');
+            return;
+        }
+       
+       return res.render('home',{
+           title:"Home",
+           posts:posts
+       });
     });
-}
-module.exports.about=function(req,res){
-    return res.end('<h1>This is the about page</h1>');
 }
 //module.exports.actionName=function(req,res){}

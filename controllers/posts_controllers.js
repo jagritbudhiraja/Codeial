@@ -1,4 +1,19 @@
-module.exports.section=function(req,res)
+const Post=require('../models/post');
+
+
+
+
+module.exports.createpost=function(req,res)
 {
-    return res.end('<h1> This is the post section </h1>');
+   Post.create({
+       content:req.body.content,
+       user:req.user.id
+   },function(err,post){
+        if(err) {
+        console.log('Error in creating a post');
+        return;
+        }
+        return res.redirect('back');
+   });
+
 }
