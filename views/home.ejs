@@ -3,7 +3,7 @@
 <section id="feed-posts">
     <h4> Your Posts</h4>
     <form action="/posts/create-post" id="new-post-form" method="POST">
-        <textarea name="content" cols="30" rows="3" placeholder="What's on your mind?"></textarea>
+        <textarea name="content" cols="30" rows="3" placeholder="What's on your mind?" required></textarea>
         <button type="submit">
             Post
         </button>
@@ -14,6 +14,25 @@
            <li> 
                <p> <%=post.content%> </p>
                <p> Posted by <%=post.user.name%> </p>
+               <div class="post-comments">
+                   <% if(locals.user){ %>
+               <form action="/comments/create" id="Comment-box" method="post">
+                  <textarea name="content" id="" cols="50" rows="4" placeholder="Write a comment" required></textarea>
+                  <input type='hidden' name='post' value="<%=post._id%>">
+                  <button type="submit">Post Comment</button>
+               </form>
+                   <% } %>
+                   <div class="post-comments-list">
+                    <% for(comment of post.comments) {%>
+                       <ul id="post-comments-<%=post._id%>">
+                         <p>
+                             <%= comment.content%>
+                         </p>
+                          <small><%=comment.user.name%></small>
+                       </ul>
+                       <% } %>
+                   </div>
+            </div>
            </li>
            <% }  %>
        </ol>
