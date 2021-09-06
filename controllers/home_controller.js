@@ -4,7 +4,7 @@ const { post } = require('../routes');
 
 module.exports.home=function(req,res){
     //(populate means to bring the whole user object not just the id)
-    Post.find({user:req.user})
+    Post.find({})
     .populate('user')
     .populate({
         path:'comments',

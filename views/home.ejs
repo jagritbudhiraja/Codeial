@@ -14,6 +14,11 @@
            <li> 
                <p> <%=post.content%> </p>
                <p> Posted by <%=post.user.name%> </p>
+               <% if((locals.user)&&(locals.user.id==post.user.id)){%>
+               <small>
+                   <a href="/posts/delete-post/?id=<%=post.id%>"> Delete</a>
+               </small>
+               <% } %>
                <div class="post-comments">
                    <% if(locals.user){ %>
                <form action="/comments/create" id="Comment-box" method="post">
@@ -29,6 +34,11 @@
                              <%= comment.content%>
                          </p>
                           <small><%=comment.user.name%></small>
+                          <%if((locals.user)&&(locals.user.id==comment.user.id||locals.user.id==post.user.id)) {%>
+                          <small>
+                              <a href="/comments/delete/?cid=<%=comment.id%>&pid=<%=post.id%>">Delete</a>
+                          </small>
+                          <% } %>
                        </ul>
                        <% } %>
                    </div>
